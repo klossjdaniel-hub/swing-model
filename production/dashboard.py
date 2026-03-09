@@ -29,7 +29,7 @@ def show_dashboard():
     cursor = conn.cursor()
 
     print("\n" + "=" * 80)
-    print(" " * 25 + "PAPER TRADING DASHBOARD")
+    print(" " * 25 + "PREDICTION DASHBOARD")
     print("=" * 80)
     print(f"\nGenerated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
 
