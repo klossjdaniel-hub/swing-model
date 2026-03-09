@@ -1,4 +1,4 @@
-name: Daily Paper Trading Pipeline
+name: Daily Prediction Pipeline
 
 on:
   schedule:
@@ -73,7 +73,7 @@ jobs:
 
             const title = `📊 Daily Update: ${new Date().toISOString().split('T')[0]}`;
             const body = `
-            ## Paper Trading Daily Summary
+            ## Daily Prediction Summary
 
             **Date:** ${new Date().toISOString().split('T')[0]}
 
@@ -102,5 +102,5 @@ jobs:
               repo: context.repo.repo,
               title: title,
               body: body,
-              labels: ['daily-update', 'paper-trading']
+              labels: ['daily-update', 'predictions']
             });
