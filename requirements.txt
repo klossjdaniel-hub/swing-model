@@ -4,7 +4,6 @@ requests>=2.31.0
 
 # Data fetching
 yfinance>=0.2.36
-finnhub-python>=2.4.19
 
 # Database
 supabase>=2.3.0

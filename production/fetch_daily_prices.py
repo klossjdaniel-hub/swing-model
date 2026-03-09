@@ -1,5 +1,5 @@
 """
-Fetch today's prices from Finnhub for all stocks in universe.
+Fetch today's prices from Yahoo Finance for all stocks in universe.
 
 Run this daily to get latest OHLCV data.
 """
@@ -8,11 +8,10 @@ import sys
 import os
 from datetime import datetime, timedelta
 import time
-import requests
+import yfinance as yf
 
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import config
 from data.db import get_connection
 from universe import UNIVERSE
 
@@ -22,73 +21,33 @@ if sys.platform == 'win32':
     sys.stderr.reconfigure(encoding='utf-8')
 
 
-def fetch_stock_quote(ticker, api_key):
-    """Fetch latest quote from Finnhub."""
-    url = "https://finnhub.io/api/v1/quote"
-    params = {
-        'symbol': ticker,
-        'token': api_key
-    }
-
+def fetch_stock_candles(ticker, from_date, to_date):
+    """Fetch daily candles from Yahoo Finance."""
     try:
-        response = requests.get(url, params=params, timeout=10)
-        response.raise_for_status()
-        data = response.json()
+        # Download data from yfinance
+        stock = yf.Ticker(ticker)
+        df = stock.history(start=from_date, end=to_date)
 
-        # Finnhub returns: c (current), h (high), l (low), o (open), pc (prev close), t (timestamp)
-        if 'c' in data and data['c'] is not None:
-            return {
-                'current': data.get('c'),
-                'high': data.get('h'),
-                'low': data.get('l'),
-                'open': data.get('o'),
-                'prev_close': data.get('pc'),
-                'timestamp': data.get('t')
-            }
-    except Exception as e:
-        print(f"[ERROR] Failed to fetch {ticker}: {e}")
+        if df.empty:
+            return []
 
-    return None
+        # Convert to list of dicts
+        candles = []
+        for date, row in df.iterrows():
+            candles.append({
+                'date': date.strftime('%Y-%m-%d'),
+                'open': float(row['Open']),
+                'high': float(row['High']),
+                'low': float(row['Low']),
+                'close': float(row['Close']),
+                'volume': int(row['Volume'])
+            })
 
+        return candles
 
-def fetch_stock_candles(ticker, from_date, to_date, api_key):
-    """Fetch daily candles from Finnhub."""
-    url = "https://finnhub.io/api/v1/stock/candle"
-
-    # Convert dates to Unix timestamps
-    from_ts = int(datetime.strptime(from_date, '%Y-%m-%d').timestamp())
-    to_ts = int(datetime.strptime(to_date, '%Y-%m-%d').timestamp())
-
-    params = {
-        'symbol': ticker,
-        'resolution': 'D',  # Daily
-        'from': from_ts,
-        'to': to_ts,
-        'token': api_key
-    }
-
-    try:
-        response = requests.get(url, params=params, timeout=10)
-        response.raise_for_status()
-        data = response.json()
-
-        if data.get('s') == 'ok' and 'c' in data:
-            # Returns arrays: c (close), h (high), l (low), o (open), v (volume), t (timestamp)
-            candles = []
-            for i in range(len(data['t'])):
-                candles.append({
-                    'date': datetime.fromtimestamp(data['t'][i]).strftime('%Y-%m-%d'),
-                    'open': data['o'][i],
-                    'high': data['h'][i],
-                    'low': data['l'][i],
-                    'close': data['c'][i],
-                    'volume': data['v'][i]
-                })
-            return candles
     except Exception as e:
         print(f"[ERROR] Failed to fetch candles for {ticker}: {e}")
-
-    return []
+        return []
 
 
 def store_prices(ticker, candles, conn):
@@ -122,10 +81,10 @@ def fetch_daily_prices():
     conn = get_connection()
 
     print("\n" + "=" * 60)
-    print("FETCHING DAILY PRICES FROM FINNHUB")
+    print("FETCHING DAILY PRICES FROM YAHOO FINANCE")
     print("=" * 60 + "\n")
 
-    # Get last 5 trading days to ensure we have recent data
+    # Get last 7 days to ensure we have recent data
     today = datetime.now()
     from_date = (today - timedelta(days=7)).strftime('%Y-%m-%d')
     to_date = today.strftime('%Y-%m-%d')
@@ -139,7 +98,7 @@ def fetch_daily_prices():
     for i, ticker in enumerate(UNIVERSE, 1):
         print(f"[{i}/{len(UNIVERSE)}] {ticker}...", end=' ')
 
-        candles = fetch_stock_candles(ticker, from_date, to_date, config.FINNHUB_API_KEY)
+        candles = fetch_stock_candles(ticker, from_date, to_date)
 
         if candles:
             stored = store_prices(ticker, candles, conn)
@@ -149,8 +108,8 @@ def fetch_daily_prices():
             print("FAILED")
             failed += 1
 
-        # Rate limit: 60 calls/min = 1 call/second
-        time.sleep(1.1)
+        # Small delay to be nice to Yahoo
+        time.sleep(0.1)
 
         # Commit every 10 stocks
         if i % 10 == 0:

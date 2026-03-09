@@ -29,8 +29,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run daily pipeline
-        env:
-          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
         run: |
           python production/run_daily_pipeline.py > pipeline_output.txt 2>&1
 
