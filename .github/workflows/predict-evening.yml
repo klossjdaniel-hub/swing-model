@@ -1,0 +1,41 @@
+name: Evening Predictions
+
+on:
+  schedule:
+    # Run daily at 23:00 UTC (6pm ET)
+    - cron: '0 23 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run prediction script
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          EULERPOOL_API_KEY: ${{ secrets.EULERPOOL_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          python scripts/predict_evening.py
+
+      - name: Upload logs (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prediction-logs
+          path: logs/
