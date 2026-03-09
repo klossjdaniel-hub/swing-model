@@ -1,24 +1,24 @@
 # Core dependencies
-python-dotenv==1.0.0
-requests==2.31.0
+python-dotenv>=1.0.0
+requests>=2.31.0
 
 # Data fetching
-yfinance==0.2.36
-finnhub-python==2.4.19
+yfinance>=0.2.36
+finnhub-python>=2.4.19
 
 # Database
-supabase==2.3.4
+supabase>=2.3.0
 
-# Data processing
-pandas==2.2.0
-numpy==1.26.3
+# Data processing - using versions with Python 3.13 wheels
+pandas>=2.2.0
+numpy>=1.26.0
 
-# Machine learning
-scikit-learn==1.4.0
-xgboost==2.0.3
+# Machine learning - compatible versions
+scikit-learn>=1.4.0
+xgboost>=2.0.0
 
 # Optional: Databento (only if using paid historical data)
-# databento==0.30.0
+# databento>=0.30.0
 
 # Optional: Alpaca (only if using after-hours data in Phase 3)
-# alpaca-trade-api==3.1.1
+# alpaca-trade-api>=3.1.1

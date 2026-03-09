@@ -1,0 +1,106 @@
+name: Daily Paper Trading Pipeline
+
+on:
+  schedule:
+    # Run at 6 PM ET (11 PM UTC) every weekday
+    - cron: '0 23 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'  # Use 3.11 for better compatibility
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run daily pipeline
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: |
+          python production/run_daily_pipeline.py > pipeline_output.txt 2>&1
+
+      - name: Generate dashboard data
+        run: |
+          python production/dashboard.py > dashboard_output.txt 2>&1
+
+      - name: Commit results to repository
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # Create results directory if it doesn't exist
+          mkdir -p daily_results
+
+          # Save today's results
+          DATE=$(date +%Y-%m-%d)
+          cp pipeline_output.txt daily_results/pipeline_${DATE}.txt
+          cp dashboard_output.txt daily_results/dashboard_${DATE}.txt
+
+          # Copy database (contains predictions)
+          cp data/swing_model.db daily_results/swing_model_${DATE}.db
+
+          # Add and commit
+          git add daily_results/
+          git commit -m "Daily pipeline results: ${DATE}" || echo "No changes to commit"
+          git push
+
+      - name: Create Issue with Summary
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const dashboard = fs.readFileSync('dashboard_output.txt', 'utf8');
+            const pipeline = fs.readFileSync('pipeline_output.txt', 'utf8');
+
+            // Extract win rate from dashboard
+            const winRateMatch = dashboard.match(/WIN RATE: ([\d.]+)%/);
+            const winRate = winRateMatch ? winRateMatch[1] : 'N/A';
+
+            // Extract predictions from pipeline
+            const highConfMatch = pipeline.match(/\[HIGH CONFIDENCE\]([\s\S]*?)(?=\n\n|$)/g);
+            const highConfPredictions = highConfMatch ? highConfMatch.length : 0;
+
+            const title = `📊 Daily Update: ${new Date().toISOString().split('T')[0]}`;
+            const body = `
+            ## Paper Trading Daily Summary
+
+            **Date:** ${new Date().toISOString().split('T')[0]}
+
+            ### Performance
+            - **Current Win Rate:** ${winRate}%
+            - **High-Confidence Predictions Today:** ${highConfPredictions}
+
+            ### Pipeline Output
+            \`\`\`
+            ${pipeline.substring(0, 2000)}
+            ${pipeline.length > 2000 ? '\n... (truncated)' : ''}
+            \`\`\`
+
+            ### Dashboard
+            \`\`\`
+            ${dashboard.substring(0, 2000)}
+            ${dashboard.length > 2000 ? '\n... (truncated)' : ''}
+            \`\`\`
+
+            ---
+            *Automated by GitHub Actions*
+            `;
+
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['daily-update', 'paper-trading']
+            });

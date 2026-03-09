@@ -9,6 +9,11 @@ Creates all tables with proper schema and indexes.
 
 import sqlite3
 from pathlib import Path
+import sys
+import os
+
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import config
 
 def get_connection():
@@ -182,8 +187,8 @@ def create_tables():
     conn.commit()
     conn.close()
 
-    print("✓ All database tables created successfully")
-    print(f"✓ Database location: {config.DB_PATH}")
+    print("[OK] All database tables created successfully")
+    print(f"[OK] Database location: {config.DB_PATH}")
 
 if __name__ == "__main__":
     print("Creating database schema...")
