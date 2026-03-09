@@ -199,14 +199,29 @@ def show_dashboard():
     if pending:
         print(f"Total pending: {len(pending)}\n")
 
+        import struct
         for ticker, date, prob, conf, catalyst, day0_return in pending[:10]:
-            direction = "UP" if day0_return and day0_return > 0 else "DOWN"
-            mag = abs(day0_return * 100) if day0_return else 0
+            # Convert binary data to float
+            try:
+                if isinstance(prob, bytes):
+                    prob_val = struct.unpack('d', prob)[0]
+                else:
+                    prob_val = float(prob) if prob else 0.0
 
-            action = "SHORT" if prob >= 0.5 and day0_return > 0 else "LONG" if prob >= 0.5 else "WATCH"
+                if isinstance(day0_return, bytes):
+                    day0_ret = struct.unpack('d', day0_return)[0]
+                else:
+                    day0_ret = float(day0_return) if day0_return else 0.0
+            except:
+                continue
+
+            direction = "UP" if day0_ret > 0 else "DOWN"
+            mag = abs(day0_ret * 100)
+
+            action = "SHORT" if prob_val >= 0.5 and day0_ret > 0 else "LONG" if prob_val >= 0.5 else "WATCH"
 
             print(f"{date} {ticker:6s} | {direction:4s} {mag:4.1f}% | {catalyst or 'unknown':10s} | "
-                  f"Prob:{prob*100:5.1f}% {conf:6s} | Action: {action}")
+                  f"Prob:{prob_val*100:5.1f}% {conf:6s} | Action: {action}")
 
         if len(pending) > 10:
             print(f"\n... and {len(pending) - 10} more")
