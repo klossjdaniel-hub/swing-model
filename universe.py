@@ -1,94 +1,32 @@
 """
 Stock universe definition for swing-model.
 
-Phase 1: 50 stocks (testing)
-Phase 2: 200 stocks (full backtest)
+Universe: Comprehensive coverage of US market >$1B
+- All S&P 500 stocks
+- High-volatility stocks (crypto, biotech, meme, AI)
+- Recent IPOs and momentum plays
 
-Mix of large caps (S&P 500) and mid caps ($1B-$10B) across diverse sectors:
-- Technology
-- Financials
-- Healthcare
-- Consumer (Discretionary + Staples)
-- Energy
-- Industrials
+Total: 350 stocks
 """
 
-# Phase 1 universe: 50 stocks for initial testing
-PHASE1_UNIVERSE = [
-    # Technology (10)
-    "AAPL", "MSFT", "NVDA", "GOOGL", "META",
-    "TSLA", "AVGO", "ORCL", "ADBE", "CRM",
+# Full universe: 350 liquid stocks
+UNIVERSE = ['A', 'AAPL', 'ABBV', 'ABNB', 'ABT', 'ACN', 'ADBE', 'ADI', 'ADP', 'ADSK', 'AEE', 'AEP', 'AFL', 'AFRM', 'AIG', 'ALB', 'ALL', 'ALNY', 'AMAT', 'AMC', 'AMD', 'AMGN', 'AMT', 'AMZN', 'ANSS', 'AON', 'APD', 'APH', 'ARE', 'ARWR', 'AVB', 'AVGO', 'AWK', 'AXP', 'AZO', 'BA', 'BAC', 'BB', 'BBBY', 'BBY', 'BGNE', 'BIIB', 'BILL', 'BK', 'BKNG', 'BKR', 'BLK', 'BLNK', 'BLUE', 'BMY', 'BNTX', 'BRK.B', 'BSX', 'C', 'CAG', 'CARR', 'CAT', 'CB', 'CCI', 'CDNS', 'CE', 'CEG', 'CF', 'CHD', 'CHPT', 'CHTR', 'CI', 'CL', 'CLOV', 'CLSK', 'CMCSA', 'CME', 'CMG', 'COF', 'COIN', 'COP', 'COR', 'COST', 'COUP', 'CPB', 'CRM', 'CRSP', 'CRWD', 'CSCO', 'CSX', 'CTRA', 'CTVA', 'CVS', 'CVX', 'D', 'DASH', 'DD', 'DDOG', 'DE', 'DHI', 'DHR', 'DIS', 'DLR', 'DOCN', 'DOMO', 'DOW', 'DPZ', 'DRI', 'DT', 'DTE', 'DUK', 'DVN', 'EA', 'ECL', 'ED', 'EDIT', 'EIX', 'ELV', 'EMN', 'EMR', 'EOG', 'EQIX', 'EQR', 'EQT', 'ES', 'ESS', 'ESTC', 'ETN', 'EW', 'EXAS', 'EXC', 'EXR', 'F', 'FANG', 'FAST', 'FATE', 'FCEL', 'FCX', 'FDX', 'FE', 'FICO', 'FMC', 'FOX', 'FOXA', 'FROG', 'FSR', 'FTNT', 'GD', 'GE', 'GILD', 'GIS', 'GM', 'GME', 'GOEV', 'GOOG', 'GOOGL', 'GPC', 'GS', 'GTLB', 'HAL', 'HD', 'HES', 'HLT', 'HON', 'HOOD', 'HRL', 'HSY', 'HUBS', 'HUM', 'HUT', 'IBM', 'ICE', 'IDXX', 'IFF', 'ILMN', 'INCY', 'INTC', 'INTU', 'INVH', 'IONS', 'IR', 'ISRG', 'ITW', 'JNJ', 'JPM', 'K', 'KLAC', 'KMB', 'KMI', 'KO', 'LCID', 'LEN', 'LIN', 'LLY', 'LMT', 'LOW', 'LRCX', 'LYV', 'MA', 'MAA', 'MAR', 'MARA', 'MCD', 'MCHP', 'MCK', 'MDB', 'MDLZ', 'MDT', 'MET', 'META', 'MKC', 'MLM', 'MMC', 'MMM', 'MO', 'MOS', 'MPC', 'MRK', 'MRNA', 'MRVL', 'MS', 'MSFT', 'MSI', 'MSTR', 'MTCH', 'MTD', 'MU', 'NEE', 'NEM', 'NET', 'NFLX', 'NKE', 'NKLA', 'NOC', 'NOW', 'NSC', 'NTLA', 'NUE', 'NVDA', 'NVR', 'NXST', 'O', 'OKE', 'OKTA', 'OMC', 'ORCL', 'ORLY', 'OTIS', 'OXY', 'PANW', 'PARA', 'PATH', 'PAYX', 'PCAR', 'PEG', 'PEP', 'PFE', 'PG', 'PGR', 'PH', 'PLD', 'PLTR', 'PLUG', 'PM', 'PNC', 'POOL', 'PPG', 'PPL', 'PRU', 'PSA', 'PSX', 'QCOM', 'QS', 'RBLX', 'REGN', 'RGEN', 'RIDE', 'RIOT', 'RIVN', 'RL', 'RMD', 'ROP', 'ROST', 'RSG', 'RTX', 'S', 'SBUX', 'SCHW', 'SGEN', 'SHW', 'SJM', 'SLB', 'SNDL', 'SNOW', 'SNPS', 'SO', 'SOFI', 'SPCE', 'SPG', 'SPGI', 'SQ', 'SRE', 'STEM', 'SUI', 'SWTX', 'SYK', 'T', 'TEAM', 'TECH', 'TFC', 'TJX', 'TLRY', 'TMO', 'TMUS', 'TPR', 'TRGP', 'TRV', 'TSLA', 'TSN', 'TT', 'TTWO', 'TXN', 'U', 'UDR', 'ULTA', 'UNH', 'UNP', 'UPS', 'USB', 'V', 'VEEV', 'VICI', 'VLO', 'VMC', 'VRSK', 'VRTX', 'VST', 'VTR', 'VZ', 'WBD', 'WDAY', 'WEC', 'WELL', 'WFC', 'WISH', 'WKHS', 'WM', 'WMB', 'WMT', 'XEL', 'XOM', 'YUM', 'ZM', 'ZS', 'ZTS']
 
-    # Financials (8)
-    "JPM", "BAC", "WFC", "GS", "MS",
-    "C", "BLK", "AXP",
-
-    # Healthcare (8)
-    "UNH", "JNJ", "LLY", "ABBV", "MRK",
-    "PFE", "TMO", "AMGN",
-
-    # Consumer Discretionary (6)
-    "AMZN", "HD", "MCD", "NKE", "SBUX",
-    "TGT",
-
-    # Consumer Staples (4)
-    "WMT", "PG", "KO", "PEP",
-
-    # Energy (5)
-    "XOM", "CVX", "COP", "SLB", "EOG",
-
-    # Industrials (5)
-    "BA", "CAT", "UNP", "HON", "LMT",
-
-    # Mid caps (4) - $1B-$10B
-    "BROS", "PLTR", "RBLX", "SNOW"
-]
-
-# Phase 2 universe: 200 stocks (to be expanded later)
-# Will add more stocks after Phase 1 validation
-PHASE2_UNIVERSE = PHASE1_UNIVERSE  # Placeholder - expand later
-
-# Current active universe
-UNIVERSE = PHASE1_UNIVERSE
-
-# Sector mappings (for Finnhub sector -> GICS sector grouping)
-SECTOR_MAPPING = {
-    # Finnhub sectors → Our 6 broad groups
-    "Technology": "Technology",
-    "Communication Services": "Technology",
-    "Consumer Cyclical": "Cyclicals",
-    "Consumer Defensive": "Defensive",
-    "Financial Services": "Financials",
-    "Financial": "Financials",
-    "Healthcare": "Healthcare",
-    "Industrials": "Cyclicals",
-    "Basic Materials": "Cyclicals",
-    "Energy": "Energy",
-    "Utilities": "Defensive",
-    "Real Estate": "Defensive",
-}
-
-# Known AMC reporters (earnings after market close)
-KNOWN_AMC_REPORTERS = [
-    "NVDA", "META", "GOOGL", "GOOG", "AMZN", "NFLX",
-    "TSLA", "AMD", "AAPL", "MSFT"  # Note: AAPL/MSFT sometimes vary
-]
-
-# Known BMO reporters (earnings before market open)
-KNOWN_BMO_REPORTERS = [
-    "JPM", "BAC", "WFC", "C", "GS", "MS",
-    "JNJ", "PG", "WMT", "HD", "UNH"
-]
-
-def get_universe(phase=1):
-    """Return the appropriate stock universe for the given phase."""
-    if phase == 1:
-        return PHASE1_UNIVERSE
-    elif phase == 2:
-        return PHASE2_UNIVERSE
-    else:
-        raise ValueError(f"Unknown phase: {phase}")
-
+# For sector analysis
 def get_sector_group(finnhub_sector):
-    """Map Finnhub sector to our 6 broad sector groups."""
-    return SECTOR_MAPPING.get(finnhub_sector, "Other")
+    """Map sector to broad groups."""
+    sector_mapping = {
+        "Technology": "Technology",
+        "Communication Services": "Technology",
+        "Consumer Cyclical": "Cyclicals",
+        "Consumer Defensive": "Defensive",
+        "Financial Services": "Financials",
+        "Financial": "Financials",
+        "Healthcare": "Healthcare",
+        "Industrials": "Cyclicals",
+        "Basic Materials": "Cyclicals",
+        "Energy": "Energy",
+        "Utilities": "Defensive",
+        "Real Estate": "Defensive",
+    }
+    return sector_mapping.get(finnhub_sector, "Other")

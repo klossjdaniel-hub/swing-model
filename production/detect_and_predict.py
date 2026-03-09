@@ -184,7 +184,9 @@ def load_model():
 
     if os.path.exists(model_path):
         with open(model_path, 'rb') as f:
-            return pickle.load(f)
+            model_data = pickle.load(f)
+            # Extract the actual model from the dict
+            return model_data['model'] if isinstance(model_data, dict) else model_data
     else:
         print(f"[ERROR] Model not found at {model_path}")
         print("       Run models/save_model.py first to train and save the model")
@@ -200,15 +202,7 @@ def generate_predictions():
     print("DETECTING BIG MOVES & GENERATING PREDICTIONS")
     print("=" * 60 + "\n")
 
-    # Get latest trading day
-    latest_date = get_latest_trading_day(conn)
-    if not latest_date:
-        print("[ERROR] No price data found")
-        return
-
-    print(f"Latest trading day: {latest_date}\n")
-
-    # Load model
+    # Load model first
     print("Loading trained model...")
     model = load_model()
     if not model:
@@ -230,9 +224,20 @@ def generate_predictions():
     moves_detected = 0
 
     print("Scanning for big moves...\n")
+    print("Checking each stock's latest available date...\n")
 
     for ticker in UNIVERSE:
-        # Get today's data
+        # Get this stock's latest available date
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT MAX(date) FROM prices WHERE ticker = ?
+        """, (ticker,))
+        latest_date = cursor.fetchone()[0]
+
+        if not latest_date:
+            continue
+
+        # Get today's data for this stock
         prices = get_price_data(ticker, latest_date, conn)
         if not prices:
             continue

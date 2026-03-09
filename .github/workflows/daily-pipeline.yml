@@ -2,8 +2,8 @@ name: Daily Prediction Pipeline
 
 on:
   schedule:
-    # Run at 6 PM ET (11 PM UTC) every weekday
-    - cron: '0 23 * * 1-5'
+    # Run at 4:15 PM ET (9:15 PM UTC) every weekday - after market close
+    - cron: '15 21 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
 
 permissions:
