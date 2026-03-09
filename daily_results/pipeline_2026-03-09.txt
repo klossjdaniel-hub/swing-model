@@ -1,0 +1,180 @@
+
+================================================================================
+                         DAILY PAPER TRADING PIPELINE
+================================================================================
+
+Run time: 2026-03-09 18:13:01
+
+================================================================================
+
+STEP 1/3: Fetching latest prices from Finnhub...
+
+
+============================================================
+FETCHING DAILY PRICES FROM FINNHUB
+============================================================
+
+Fetching prices from 2026-03-02 to 2026-03-09
+
+Stocks: 50
+
+[1/50] AAPL... [ERROR] Failed to fetch candles for AAPL: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[2/50] MSFT... [ERROR] Failed to fetch candles for MSFT: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=MSFT&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[3/50] NVDA... [ERROR] Failed to fetch candles for NVDA: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=NVDA&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[4/50] GOOGL... [ERROR] Failed to fetch candles for GOOGL: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=GOOGL&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[5/50] META... [ERROR] Failed to fetch candles for META: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=META&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[6/50] TSLA... [ERROR] Failed to fetch candles for TSLA: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=TSLA&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[7/50] AVGO... [ERROR] Failed to fetch candles for AVGO: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=AVGO&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[8/50] ORCL... [ERROR] Failed to fetch candles for ORCL: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=ORCL&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[9/50] ADBE... [ERROR] Failed to fetch candles for ADBE: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=ADBE&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[10/50] CRM... [ERROR] Failed to fetch candles for CRM: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=CRM&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[11/50] JPM... [ERROR] Failed to fetch candles for JPM: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=JPM&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[12/50] BAC... [ERROR] Failed to fetch candles for BAC: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=BAC&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[13/50] WFC... [ERROR] Failed to fetch candles for WFC: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=WFC&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[14/50] GS... [ERROR] Failed to fetch candles for GS: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=GS&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[15/50] MS... [ERROR] Failed to fetch candles for MS: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=MS&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[16/50] C... [ERROR] Failed to fetch candles for C: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=C&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[17/50] BLK... [ERROR] Failed to fetch candles for BLK: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=BLK&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[18/50] AXP... [ERROR] Failed to fetch candles for AXP: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=AXP&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[19/50] UNH... [ERROR] Failed to fetch candles for UNH: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=UNH&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[20/50] JNJ... [ERROR] Failed to fetch candles for JNJ: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=JNJ&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[21/50] LLY... [ERROR] Failed to fetch candles for LLY: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=LLY&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[22/50] ABBV... [ERROR] Failed to fetch candles for ABBV: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=ABBV&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[23/50] MRK... [ERROR] Failed to fetch candles for MRK: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=MRK&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[24/50] PFE... [ERROR] Failed to fetch candles for PFE: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=PFE&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[25/50] TMO... [ERROR] Failed to fetch candles for TMO: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=TMO&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[26/50] AMGN... [ERROR] Failed to fetch candles for AMGN: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=AMGN&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[27/50] AMZN... [ERROR] Failed to fetch candles for AMZN: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=AMZN&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[28/50] HD... [ERROR] Failed to fetch candles for HD: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=HD&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[29/50] MCD... [ERROR] Failed to fetch candles for MCD: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=MCD&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[30/50] NKE... [ERROR] Failed to fetch candles for NKE: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=NKE&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[31/50] SBUX... [ERROR] Failed to fetch candles for SBUX: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=SBUX&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[32/50] TGT... [ERROR] Failed to fetch candles for TGT: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=TGT&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[33/50] WMT... [ERROR] Failed to fetch candles for WMT: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=WMT&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[34/50] PG... [ERROR] Failed to fetch candles for PG: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=PG&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[35/50] KO... [ERROR] Failed to fetch candles for KO: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=KO&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[36/50] PEP... [ERROR] Failed to fetch candles for PEP: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=PEP&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[37/50] XOM... [ERROR] Failed to fetch candles for XOM: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=XOM&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[38/50] CVX... [ERROR] Failed to fetch candles for CVX: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=CVX&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[39/50] COP... [ERROR] Failed to fetch candles for COP: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=COP&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[40/50] SLB... [ERROR] Failed to fetch candles for SLB: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=SLB&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[41/50] EOG... [ERROR] Failed to fetch candles for EOG: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=EOG&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[42/50] BA... [ERROR] Failed to fetch candles for BA: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=BA&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[43/50] CAT... [ERROR] Failed to fetch candles for CAT: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=CAT&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[44/50] UNP... [ERROR] Failed to fetch candles for UNP: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=UNP&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[45/50] HON... [ERROR] Failed to fetch candles for HON: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=HON&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[46/50] LMT... [ERROR] Failed to fetch candles for LMT: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=LMT&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[47/50] BROS... [ERROR] Failed to fetch candles for BROS: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=BROS&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[48/50] PLTR... [ERROR] Failed to fetch candles for PLTR: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=PLTR&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[49/50] RBLX... [ERROR] Failed to fetch candles for RBLX: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=RBLX&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+[50/50] SNOW... [ERROR] Failed to fetch candles for SNOW: 403 Client Error: Forbidden for url: https://finnhub.io/api/v1/stock/candle?symbol=SNOW&resolution=D&from=1772409600&to=1773014400&token=d5uh709r01qr4f897r9gd5uh709r01qr4f897ra0
+FAILED
+
+============================================================
+SUMMARY
+============================================================
+
+Total prices stored: 0
+Failed tickers: 50
+
+Latest data dates:
+  2026-03-09: 50 stocks
+
+============================================================
+[OK] Daily prices fetched
+============================================================
+
+STEP 2/3: Detecting big moves and generating predictions...
+
+
+============================================================
+DETECTING BIG MOVES & GENERATING PREDICTIONS
+============================================================
+
+Latest trading day: 2026-03-09
+
+Loading trained model...
+[OK] Model loaded
+
+Scanning for big moves...
+
+============================================================
+SUMMARY
+============================================================
+
+Big moves detected: 0
+Predictions generated: 0
+
+[OK] Predictions stored in forward_predictions table
+============================================================
+
+STEP 3/3: Scoring previous predictions...
+
+
+============================================================
+SCORING PREDICTIONS
+============================================================
+
+No unscored predictions found.
+
+
+================================================================================
+                              PIPELINE COMPLETE
+================================================================================
+
+Next steps:
+  1. Check forward_predictions table for today's predictions
+  2. Review performance dashboard: python production/dashboard.py
+  3. Check high-confidence predictions above
+
+================================================================================
+
