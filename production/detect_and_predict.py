@@ -286,7 +286,7 @@ def generate_predictions():
         else:
             confidence = 'low'
 
-        # Store prediction
+        # Store prediction with full details
         cursor.execute("""
             INSERT INTO forward_predictions (
                 prediction_timestamp,
@@ -295,8 +295,12 @@ def generate_predictions():
                 predicted_direction,
                 reversion_prob_day2,
                 confidence_tier,
-                model_version
-            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                model_version,
+                day0_return,
+                day0_direction,
+                day0_volume_ratio,
+                day0_catalyst
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
             ticker,
@@ -304,7 +308,11 @@ def generate_predictions():
             predicted_direction,
             reversion_prob,
             confidence,
-            'catalyst_aware_v1'
+            'catalyst_aware_v1',
+            day0_return,  # Store the actual move size
+            features['direction'],  # 1 for up, -1 for down
+            volume_ratio,  # How much volume vs normal
+            catalyst_type  # earnings, gap, or unknown
         ))
 
         predictions_made += 1
