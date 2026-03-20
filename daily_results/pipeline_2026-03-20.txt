@@ -1,0 +1,497 @@
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ANSS"}}}
+$ANSS: possibly delisted; no timezone found
+$BGNE: possibly delisted; no timezone found
+$BLUE: possibly delisted; no timezone found
+$BRK.B: possibly delisted; no timezone found
+$COUP: possibly delisted; no timezone found
+$FSR: possibly delisted; no timezone found
+$HES: possibly delisted; no timezone found
+$K: possibly delisted; no timezone found
+$MMC: possibly delisted; no timezone found
+$NKLA: possibly delisted; no price data found  (1d 2026-03-13 -> 2026-03-20)
+$PARA: possibly delisted; no timezone found
+$RIDE: possibly delisted; no timezone found
+$SGEN: possibly delisted; no timezone found
+$SQ: possibly delisted; no timezone found
+$SWTX: possibly delisted; no timezone found
+
+================================================================================
+                         DAILY PAPER TRADING PIPELINE
+================================================================================
+
+Run time: 2026-03-20 21:45:06
+
+================================================================================
+
+STEP 1/3: Fetching latest prices from Finnhub...
+
+
+============================================================
+FETCHING DAILY PRICES FROM YAHOO FINANCE
+============================================================
+
+Fetching prices from 2026-03-13 to 2026-03-20
+
+Stocks: 350
+
+[1/350] A... 5 days
+[2/350] AAPL... 5 days
+[3/350] ABBV... 5 days
+[4/350] ABNB... 5 days
+[5/350] ABT... 5 days
+[6/350] ACN... 5 days
+[7/350] ADBE... 5 days
+[8/350] ADI... 5 days
+[9/350] ADP... 5 days
+[10/350] ADSK... 5 days
+[11/350] AEE... 5 days
+[12/350] AEP... 5 days
+[13/350] AFL... 5 days
+[14/350] AFRM... 5 days
+[15/350] AIG... 5 days
+[16/350] ALB... 5 days
+[17/350] ALL... 5 days
+[18/350] ALNY... 5 days
+[19/350] AMAT... 5 days
+[20/350] AMC... 5 days
+[21/350] AMD... 5 days
+[22/350] AMGN... 5 days
+[23/350] AMT... 5 days
+[24/350] AMZN... 5 days
+[25/350] ANSS... FAILED
+[26/350] AON... 5 days
+[27/350] APD... 5 days
+[28/350] APH... 5 days
+[29/350] ARE... 5 days
+[30/350] ARWR... 5 days
+[31/350] AVB... 5 days
+[32/350] AVGO... 5 days
+[33/350] AWK... 5 days
+[34/350] AXP... 5 days
+[35/350] AZO... 5 days
+[36/350] BA... 5 days
+[37/350] BAC... 5 days
+[38/350] BB... 5 days
+[39/350] BBBY... 5 days
+[40/350] BBY... 5 days
+[41/350] BGNE... FAILED
+[42/350] BIIB... 5 days
+[43/350] BILL... 5 days
+[44/350] BK... 5 days
+[45/350] BKNG... 5 days
+[46/350] BKR... 5 days
+[47/350] BLK... 5 days
+[48/350] BLNK... 5 days
+[49/350] BLUE... FAILED
+[50/350] BMY... 5 days
+[51/350] BNTX... 5 days
+[52/350] BRK.B... FAILED
+[53/350] BSX... 5 days
+[54/350] C... 5 days
+[55/350] CAG... 5 days
+[56/350] CARR... 5 days
+[57/350] CAT... 5 days
+[58/350] CB... 5 days
+[59/350] CCI... 5 days
+[60/350] CDNS... 5 days
+[61/350] CE... 5 days
+[62/350] CEG... 5 days
+[63/350] CF... 5 days
+[64/350] CHD... 5 days
+[65/350] CHPT... 5 days
+[66/350] CHTR... 5 days
+[67/350] CI... 5 days
+[68/350] CL... 5 days
+[69/350] CLOV... 5 days
+[70/350] CLSK... 5 days
+[71/350] CMCSA... 5 days
+[72/350] CME... 5 days
+[73/350] CMG... 5 days
+[74/350] COF... 5 days
+[75/350] COIN... 5 days
+[76/350] COP... 5 days
+[77/350] COR... 5 days
+[78/350] COST... 5 days
+[79/350] COUP... FAILED
+[80/350] CPB... 5 days
+[81/350] CRM... 5 days
+[82/350] CRSP... 5 days
+[83/350] CRWD... 5 days
+[84/350] CSCO... 5 days
+[85/350] CSX... 5 days
+[86/350] CTRA... 5 days
+[87/350] CTVA... 5 days
+[88/350] CVS... 5 days
+[89/350] CVX... 5 days
+[90/350] D... 5 days
+[91/350] DASH... 5 days
+[92/350] DD... 5 days
+[93/350] DDOG... 5 days
+[94/350] DE... 5 days
+[95/350] DHI... 5 days
+[96/350] DHR... 5 days
+[97/350] DIS... 5 days
+[98/350] DLR... 5 days
+[99/350] DOCN... 5 days
+[100/350] DOMO... 5 days
+[101/350] DOW... 5 days
+[102/350] DPZ... 5 days
+[103/350] DRI... 5 days
+[104/350] DT... 5 days
+[105/350] DTE... 5 days
+[106/350] DUK... 5 days
+[107/350] DVN... 5 days
+[108/350] EA... 5 days
+[109/350] ECL... 5 days
+[110/350] ED... 5 days
+[111/350] EDIT... 5 days
+[112/350] EIX... 5 days
+[113/350] ELV... 5 days
+[114/350] EMN... 5 days
+[115/350] EMR... 5 days
+[116/350] EOG... 5 days
+[117/350] EQIX... 5 days
+[118/350] EQR... 5 days
+[119/350] EQT... 5 days
+[120/350] ES... 5 days
+[121/350] ESS... 5 days
+[122/350] ESTC... 5 days
+[123/350] ETN... 5 days
+[124/350] EW... 5 days
+[125/350] EXAS... 5 days
+[126/350] EXC... 5 days
+[127/350] EXR... 5 days
+[128/350] F... 5 days
+[129/350] FANG... 5 days
+[130/350] FAST... 5 days
+[131/350] FATE... 5 days
+[132/350] FCEL... 5 days
+[133/350] FCX... 5 days
+[134/350] FDX... 5 days
+[135/350] FE... 5 days
+[136/350] FICO... 5 days
+[137/350] FMC... 5 days
+[138/350] FOX... 5 days
+[139/350] FOXA... 5 days
+[140/350] FROG... 5 days
+[141/350] FSR... FAILED
+[142/350] FTNT... 5 days
+[143/350] GD... 5 days
+[144/350] GE... 5 days
+[145/350] GILD... 5 days
+[146/350] GIS... 5 days
+[147/350] GM... 5 days
+[148/350] GME... 5 days
+[149/350] GOEV... 5 days
+[150/350] GOOG... 5 days
+[151/350] GOOGL... 5 days
+[152/350] GPC... 5 days
+[153/350] GS... 5 days
+[154/350] GTLB... 5 days
+[155/350] HAL... 5 days
+[156/350] HD... 5 days
+[157/350] HES... FAILED
+[158/350] HLT... 5 days
+[159/350] HON... 5 days
+[160/350] HOOD... 5 days
+[161/350] HRL... 5 days
+[162/350] HSY... 5 days
+[163/350] HUBS... 5 days
+[164/350] HUM... 5 days
+[165/350] HUT... 5 days
+[166/350] IBM... 5 days
+[167/350] ICE... 5 days
+[168/350] IDXX... 5 days
+[169/350] IFF... 5 days
+[170/350] ILMN... 5 days
+[171/350] INCY... 5 days
+[172/350] INTC... 5 days
+[173/350] INTU... 5 days
+[174/350] INVH... 5 days
+[175/350] IONS... 5 days
+[176/350] IR... 5 days
+[177/350] ISRG... 5 days
+[178/350] ITW... 5 days
+[179/350] JNJ... 5 days
+[180/350] JPM... 5 days
+[181/350] K... FAILED
+[182/350] KLAC... 5 days
+[183/350] KMB... 5 days
+[184/350] KMI... 5 days
+[185/350] KO... 5 days
+[186/350] LCID... 5 days
+[187/350] LEN... 5 days
+[188/350] LIN... 5 days
+[189/350] LLY... 5 days
+[190/350] LMT... 5 days
+[191/350] LOW... 5 days
+[192/350] LRCX... 5 days
+[193/350] LYV... 5 days
+[194/350] MA... 5 days
+[195/350] MAA... 5 days
+[196/350] MAR... 5 days
+[197/350] MARA... 5 days
+[198/350] MCD... 5 days
+[199/350] MCHP... 5 days
+[200/350] MCK... 5 days
+[201/350] MDB... 5 days
+[202/350] MDLZ... 5 days
+[203/350] MDT... 5 days
+[204/350] MET... 5 days
+[205/350] META... 5 days
+[206/350] MKC... 5 days
+[207/350] MLM... 5 days
+[208/350] MMC... FAILED
+[209/350] MMM... 5 days
+[210/350] MO... 5 days
+[211/350] MOS... 5 days
+[212/350] MPC... 5 days
+[213/350] MRK... 5 days
+[214/350] MRNA... 5 days
+[215/350] MRVL... 5 days
+[216/350] MS... 5 days
+[217/350] MSFT... 5 days
+[218/350] MSI... 5 days
+[219/350] MSTR... 5 days
+[220/350] MTCH... 5 days
+[221/350] MTD... 5 days
+[222/350] MU... 5 days
+[223/350] NEE... 5 days
+[224/350] NEM... 5 days
+[225/350] NET... 5 days
+[226/350] NFLX... 5 days
+[227/350] NKE... 5 days
+[228/350] NKLA... FAILED
+[229/350] NOC... 5 days
+[230/350] NOW... 5 days
+[231/350] NSC... 5 days
+[232/350] NTLA... 5 days
+[233/350] NUE... 5 days
+[234/350] NVDA... 5 days
+[235/350] NVR... 5 days
+[236/350] NXST... 5 days
+[237/350] O... 5 days
+[238/350] OKE... 5 days
+[239/350] OKTA... 5 days
+[240/350] OMC... 5 days
+[241/350] ORCL... 5 days
+[242/350] ORLY... 5 days
+[243/350] OTIS... 5 days
+[244/350] OXY... 5 days
+[245/350] PANW... 5 days
+[246/350] PARA... FAILED
+[247/350] PATH... 5 days
+[248/350] PAYX... 5 days
+[249/350] PCAR... 5 days
+[250/350] PEG... 5 days
+[251/350] PEP... 5 days
+[252/350] PFE... 5 days
+[253/350] PG... 5 days
+[254/350] PGR... 5 days
+[255/350] PH... 5 days
+[256/350] PLD... 5 days
+[257/350] PLTR... 5 days
+[258/350] PLUG... 5 days
+[259/350] PM... 5 days
+[260/350] PNC... 5 days
+[261/350] POOL... 5 days
+[262/350] PPG... 5 days
+[263/350] PPL... 5 days
+[264/350] PRU... 5 days
+[265/350] PSA... 5 days
+[266/350] PSX... 5 days
+[267/350] QCOM... 5 days
+[268/350] QS... 5 days
+[269/350] RBLX... 5 days
+[270/350] REGN... 5 days
+[271/350] RGEN... 5 days
+[272/350] RIDE... FAILED
+[273/350] RIOT... 5 days
+[274/350] RIVN... 5 days
+[275/350] RL... 5 days
+[276/350] RMD... 5 days
+[277/350] ROP... 5 days
+[278/350] ROST... 5 days
+[279/350] RSG... 5 days
+[280/350] RTX... 5 days
+[281/350] S... 5 days
+[282/350] SBUX... 5 days
+[283/350] SCHW... 5 days
+[284/350] SGEN... FAILED
+[285/350] SHW... 5 days
+[286/350] SJM... 5 days
+[287/350] SLB... 5 days
+[288/350] SNDL... 5 days
+[289/350] SNOW... 5 days
+[290/350] SNPS... 5 days
+[291/350] SO... 5 days
+[292/350] SOFI... 5 days
+[293/350] SPCE... 5 days
+[294/350] SPG... 5 days
+[295/350] SPGI... 5 days
+[296/350] SQ... FAILED
+[297/350] SRE... 5 days
+[298/350] STEM... 5 days
+[299/350] SUI... 5 days
+[300/350] SWTX... FAILED
+[301/350] SYK... 5 days
+[302/350] T... 5 days
+[303/350] TEAM... 5 days
+[304/350] TECH... 5 days
+[305/350] TFC... 5 days
+[306/350] TJX... 5 days
+[307/350] TLRY... 5 days
+[308/350] TMO... 5 days
+[309/350] TMUS... 5 days
+[310/350] TPR... 5 days
+[311/350] TRGP... 5 days
+[312/350] TRV... 5 days
+[313/350] TSLA... 5 days
+[314/350] TSN... 5 days
+[315/350] TT... 5 days
+[316/350] TTWO... 5 days
+[317/350] TXN... 5 days
+[318/350] U...$WISH: possibly delisted; no timezone found
+ 5 days
+[319/350] UDR... 5 days
+[320/350] ULTA... 5 days
+[321/350] UNH... 5 days
+[322/350] UNP... 5 days
+[323/350] UPS... 5 days
+[324/350] USB... 5 days
+[325/350] V... 5 days
+[326/350] VEEV... 5 days
+[327/350] VICI... 5 days
+[328/350] VLO... 5 days
+[329/350] VMC... 5 days
+[330/350] VRSK... 5 days
+[331/350] VRTX... 5 days
+[332/350] VST... 5 days
+[333/350] VTR... 5 days
+[334/350] VZ... 5 days
+[335/350] WBD... 5 days
+[336/350] WDAY... 5 days
+[337/350] WEC... 5 days
+[338/350] WELL... 5 days
+[339/350] WFC... 5 days
+[340/350] WISH... FAILED
+[341/350] WKHS... 5 days
+[342/350] WM... 5 days
+[343/350] WMB... 5 days
+[344/350] WMT... 5 days
+[345/350] XEL... 5 days
+[346/350] XOM... 5 days
+[347/350] YUM... 5 days
+[348/350] ZM... 5 days
+[349/350] ZS... 5 days
+[350/350] ZTS... 5 days
+
+============================================================
+SUMMARY
+============================================================
+
+Total prices stored: 1670
+Failed tickers: 16
+
+Latest data dates:
+  2026-03-19: 334 stocks
+  2026-03-06: 1 stocks
+
+============================================================
+[OK] Daily prices fetched
+============================================================
+
+STEP 2/3: Detecting big moves and generating predictions...
+
+
+============================================================
+DETECTING BIG MOVES & GENERATING PREDICTIONS
+============================================================
+
+Loading trained model...
+[OK] Model loaded
+
+Scanning for big moves...
+
+Checking each stock's latest available date...
+
+============================================================
+SUMMARY
+============================================================
+
+Big moves detected: 14
+Predictions generated: 14
+
+[OK] Predictions stored in forward_predictions table
+============================================================
+
+STEP 3/3: Scoring previous predictions...
+
+
+============================================================
+SCORING PREDICTIONS
+============================================================
+
+Found 38 unscored predictions
+
+[WAIT] CARR 2026-03-06 - not enough days yet
+[WAIT] DD 2026-03-06 - not enough days yet
+[WAIT] FDX 2026-03-06 - not enough days yet
+[WAIT] MDT 2026-03-06 - not enough days yet
+[WAIT] MRVL 2026-03-06 - not enough days yet
+[WAIT] PH 2026-03-06 - not enough days yet
+[WAIT] PLD 2026-03-06 - not enough days yet
+[WAIT] TFC 2026-03-06 - not enough days yet
+[WAIT] CARR 2026-03-06 - not enough days yet
+[WAIT] DD 2026-03-06 - not enough days yet
+[WAIT] FDX 2026-03-06 - not enough days yet
+[WAIT] MDT 2026-03-06 - not enough days yet
+[WAIT] MRVL 2026-03-06 - not enough days yet
+[WAIT] PH 2026-03-06 - not enough days yet
+[WAIT] PLD 2026-03-06 - not enough days yet
+[WAIT] TFC 2026-03-06 - not enough days yet
+[WAIT] CARR 2026-03-06 - not enough days yet
+[WAIT] DD 2026-03-06 - not enough days yet
+[WAIT] FDX 2026-03-06 - not enough days yet
+[WAIT] MDT 2026-03-06 - not enough days yet
+[WAIT] MRVL 2026-03-06 - not enough days yet
+[WAIT] PH 2026-03-06 - not enough days yet
+[WAIT] PLD 2026-03-06 - not enough days yet
+[WAIT] TFC 2026-03-06 - not enough days yet
+[WAIT] ACN 2026-03-19 - not enough days yet
+[WAIT] COR 2026-03-19 - not enough days yet
+[WAIT] DASH 2026-03-19 - not enough days yet
+[WAIT] DOMO 2026-03-19 - not enough days yet
+[WAIT] DT 2026-03-19 - not enough days yet
+[WAIT] ES 2026-03-19 - not enough days yet
+[WAIT] MU 2026-03-19 - not enough days yet
+[WAIT] NEM 2026-03-19 - not enough days yet
+[WAIT] NSC 2026-03-19 - not enough days yet
+[WAIT] OTIS 2026-03-19 - not enough days yet
+[WAIT] PSX 2026-03-19 - not enough days yet
+[WAIT] RIVN 2026-03-19 - not enough days yet
+[WAIT] SLB 2026-03-19 - not enough days yet
+[WAIT] TRGP 2026-03-19 - not enough days yet
+============================================================
+OVERALL PERFORMANCE
+============================================================
+
+No scored predictions yet.
+
+
+============================================================
+[OK] Scored 0 predictions, skipped 38
+============================================================
+
+
+================================================================================
+                              PIPELINE COMPLETE
+================================================================================
+
+Next steps:
+  1. Check forward_predictions table for today's predictions
+  2. Review performance dashboard: python production/dashboard.py
+  3. Check high-confidence predictions above
+
+================================================================================
+
