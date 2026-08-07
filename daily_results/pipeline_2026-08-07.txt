@@ -13,7 +13,7 @@ $HES: possibly delisted; no timezone found
 $K: possibly delisted; no timezone found
 $MMC: possibly delisted; no timezone found
 $NKLA: possibly delisted; no timezone found
-$PARA: possibly delisted; no timezone found
+$PARA: possibly delisted; no price data found  (1d 2026-07-31 -> 2026-08-07)
 $RIDE: possibly delisted; no timezone found
 $SGEN: possibly delisted; no timezone found
 $SQ: possibly delisted; no timezone found
@@ -23,7 +23,7 @@ $SWTX: possibly delisted; no timezone found
                          DAILY PAPER TRADING PIPELINE
 ================================================================================
 
-Run time: 2026-08-07 01:02:01
+Run time: 2026-08-07 21:53:14
 
 ================================================================================
 
@@ -145,7 +145,7 @@ Stocks: 350
 [105/350] DTE... 5 days
 [106/350] DUK... 5 days
 [107/350] DVN... 5 days
-[108/350] EA... 2 days
+[108/350] EA... 3 days
 [109/350] ECL... 5 days
 [110/350] ED... 5 days
 [111/350] EDIT... 5 days
@@ -394,12 +394,11 @@ Stocks: 350
 SUMMARY
 ============================================================
 
-Total prices stored: 1647
+Total prices stored: 1648
 Failed tickers: 20
 
 Latest data dates:
-  2026-08-06: 329 stocks
-  2026-08-05: 1 stocks
+  2026-08-06: 330 stocks
   2026-03-06: 5 stocks
 
 ============================================================
@@ -421,17 +420,17 @@ Scanning for big moves...
 Checking each stock's latest available date...
 
 [HIGH CONFIDENCE] ZTS
-  Move: UP 3.9% (volume 3.1x)
+  Move: UP 3.9% (volume 3.4x)
   Catalyst: gap
-  Prediction: 69.7% chance of reversion
+  Prediction: 69.4% chance of reversion
   Action: FADE (short)
 
 ============================================================
 SUMMARY
 ============================================================
 
-Big moves detected: 13
-Predictions generated: 13
+Big moves detected: 19
+Predictions generated: 19
 
 [OK] Predictions stored in forward_predictions table
 ============================================================
@@ -443,7 +442,7 @@ STEP 3/3: Scoring previous predictions...
 SCORING PREDICTIONS
 ============================================================
 
-Found 37 unscored predictions
+Found 43 unscored predictions
 
 [WAIT] CARR 2026-03-06 - not enough days yet
 [WAIT] DD 2026-03-06 - not enough days yet
@@ -469,8 +468,11 @@ Found 37 unscored predictions
 [WAIT] PH 2026-03-06 - not enough days yet
 [WAIT] PLD 2026-03-06 - not enough days yet
 [WAIT] TFC 2026-03-06 - not enough days yet
+[WAIT] ALB 2026-08-06 - not enough days yet
 [WAIT] BBBY 2026-08-06 - not enough days yet
 [WAIT] CLOV 2026-08-06 - not enough days yet
+[WAIT] COR 2026-08-06 - not enough days yet
+[WAIT] CRM 2026-08-06 - not enough days yet
 [WAIT] D 2026-08-06 - not enough days yet
 [WAIT] DASH 2026-08-06 - not enough days yet
 [WAIT] DDOG 2026-08-06 - not enough days yet
@@ -478,7 +480,10 @@ Found 37 unscored predictions
 [WAIT] FOXA 2026-08-06 - not enough days yet
 [WAIT] HUBS 2026-08-06 - not enough days yet
 [WAIT] ILMN 2026-08-06 - not enough days yet
+[WAIT] MCHP 2026-08-06 - not enough days yet
 [WAIT] MSI 2026-08-06 - not enough days yet
+[WAIT] NET 2026-08-06 - not enough days yet
+[WAIT] PH 2026-08-06 - not enough days yet
 [WAIT] RL 2026-08-06 - not enough days yet
 [WAIT] U 2026-08-06 - not enough days yet
 [WAIT] ZTS 2026-08-06 - not enough days yet
@@ -490,7 +495,7 @@ No scored predictions yet.
 
 
 ============================================================
-[OK] Scored 0 predictions, skipped 37
+[OK] Scored 0 predictions, skipped 43
 ============================================================
 
 
